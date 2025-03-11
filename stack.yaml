@@ -1,8 +1,10 @@
 flags: {}
 extra-package-dbs: []
 packages:
-- '.'
+  - '.'
 extra-deps:
-- monadIO-0.10.1.4
-- rolling-queue-0.1
-resolver: lts-21.0
+  - monadIO-0.10.1.4
+  - rolling-queue-0.1
+  - github: jathibodeau/hs-connection
+    commit: 5f63e0d55594f810288b0549b3e71f59d5187b19
+resolver: lts-22.43
