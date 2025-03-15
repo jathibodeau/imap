@@ -90,8 +90,8 @@ dispatchError requests errorMessage = do
       liftIO . atomically $ writeTQueue (responseQueue req) $ Tagged errorResponse
       return reqs
     _ -> do
-      liftIO $ errorM "dispatchError" "Cannot dispatch a parse error \
-        \without an outstanding request"
+      liftIO $ errorM "dispatchError" $ "Cannot dispatch a parse error \
+        \without an outstanding request: " <> T.unpack errorMessage
       return []
 
 dispatchTagged :: (MonadIO m) => [ResponseRequest] ->
